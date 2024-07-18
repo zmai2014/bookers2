@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   def show
+    @user = current_user
   end
 
   def edit
@@ -7,8 +8,16 @@ class UsersController < ApplicationController
   end
   
   def index
-    @user = User.all
-    @books = User.books
+    @user = current_user
     @book = Book.new
+  end
+  
+  def new
+  end
+  
+  def create
+  end
+  
+  def destroy
   end
 end
