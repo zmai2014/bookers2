@@ -1,21 +1,6 @@
 # 特定のユーザーの詳細情報
-<h2>User info</h2>
-<%= image_tag @user.get_profile_image(100,100) %>
-<table>
-  <tbody>
-    <tr></tr>
-    <tr>
-      <th>name</th>
-      <th><%= @user.name %></th>
-    </tr>
-    <tr>
-      <th>introduction</th>
-      <%= @user.introduction %>
-    </tr>
-  </tbody>
-</table>
 
-<h2>New book</h2>
+<%= render 'layouts/sidebar', user: @user %>
 
 
 <h2>Books</h2>

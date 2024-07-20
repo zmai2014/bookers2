@@ -1,4 +1,7 @@
 # すべての本情報
+
+<%= render 'layouts/sidebar', user: @user %>
+
 <h2>Books</h2>
 <%= @books.each do |book| %>
 <thead>
