@@ -8,23 +8,28 @@
         <h2>Book detail</h2>
         <table class="table">
           <tbody>
-            <% @books.each do |book| %>
             <tr>
               <td>
-                <%= image_tag @user.get_profile_image(100,100) %>
-                <%= link_to book_path(book.id) do %>
-                  <%= book.user %>
+                <%= image_tag @user.get_profile_image(100,100) %></br>
+                <%= link_to user_path(current_user.id) do %>
+                  <%= current_user.name %>
                 <% end %>
               </td>
               <td>
-                <%= link_to book_path(book.id) do %>
+                <%= link_to book_path(@book.id) do %>
                   <%= book.title %>
                 <% end %>
               </td>
-              <td></td>
-              <td></td>
+              <td><%= book.body %></td>
+              <td>
+                <%= link_to "Edit", edit_book_path(@book.id), class: "btn btn-success" %>
+              </td>
+              <td>
+                <% if @book.user == current_user %>
+                  <%= link_to "Destroy", book_path(@book), class: "btn btn-danger", method: :delete %>
+                <% end %>
+              </td>
             </tr>
-            <% end %>
           </tbody>
         </table>
       </div>
